@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Address;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,12 +16,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->date('birthday');
-            $table->string('province');
-            $table->string('municipality');
-            $table->string('street');
-            $table->string('nif');
             $table->string('position');
             $table->string('phone');
+            $table->foreignIdFor(Address::class);
             $table->timestamps();
         });
     }

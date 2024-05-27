@@ -17,7 +17,12 @@ class UserData extends Model
         'street',
         'nif',
         'position',
-        'phone'
+        'phone',
+        'address_id'
     ];
+
+    public function dataAdress(){
+        return $this->belongsTo(Address::class, 'address_id');
+    }
 
 }

@@ -10,7 +10,7 @@
 
     <div class='mt-5'>
     <div class=' col-md-12 d-flex justify-content-end container '>
-     <a class='btn btn-warning' href='{{route('login.index')}}' >Login</a>
+     <a class='btn btn-warning' href='{{route('login')}}' >Login</a>
     </div>
 
     <h3 class='text-uppercase text-center'>Seja bem vindo ao blog de notícias</h3>

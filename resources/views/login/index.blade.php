@@ -43,8 +43,11 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Login!</h1>
                                     </div>
-                                    <form method='GET' action='{{route('login.authentication')}}' class="user">
-                                        <div class="form-group">
+
+                                    <form method='POST' action='{{route('login.authentication')}}' class="user">
+                                        @csrf   
+                                         
+                                    <div class="form-group">
                                             <input name='email' type="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 placeholder="Enter Email Address...">

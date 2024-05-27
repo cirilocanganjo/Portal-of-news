@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use  App\Models\{UserData,User};
+use  App\Models\{Address, UserData,User};
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,36 +15,6 @@ use  App\Models\{UserData,User};
 
 Require __DIR__ .'/site/routes.php';
 Require __DIR__ .'/authentication/routes.php';
+Require __DIR__ .'/employee/routes.php';
+Require __DIR__ .'/admin/routes.php';
 
-Route::get("/data",function(){
-    try {
-        //code...
-
-        $data= UserData::create([
-        'name' => "Domingos",
-        'birthday' => "1990-09-17",
-        'province' =>"Benguela",
-        'municipality' =>"Benguela",
-        'street' =>"Benfica",
-        'nif' =>"0048856BA040",
-        'position' =>"CEO",
-        'phone' =>"932906020"
-        ]);
-
-        
-
-    User::create([
-        "email"=>"fortunatosnat@gmail.com",
-        "password"=> \Hash::make("for06"),
-        "profiletype"=>"admin",
-        "user_data_id"=> $data["id"]
-    ]);
-
-    dd("dados salvos com sucesso");
-
-
-    } catch (\Throwable $th) {
-      dd($th->getMessage()); 
-    }
-
-});
